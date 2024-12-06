@@ -1,0 +1,296 @@
+/* ================ Add Google Fonts ================== */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Montserrat:wght@100..900&display=swap');
+
+
+/* ================ Reset Default Css =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+html {
+  font-size: 62.5%;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+}
+
+body {
+  background-color: #1d1d2b;
+}
+
+/* ============ create css variables =================== */
+:root {
+
+  /* colors  */
+  --bg-color: #1d1d2b;
+  --primary-color: #139ae1;
+  --primary-dark: #0d7dba;
+  --secondary-color: #29293b;
+  --text-color: #b5b9d6;
+  --light-color: #fff;
+
+  /* fonts  */
+  --jost: "Jost", sans-serif;
+  --montserrat: "Montserrat", sans-serif;
+}
+
+section {
+  height: 100vh;
+}
+
+/* ==================== Style Navbar ================== */
+#header {
+  height: 100px;
+  padding: 1rem 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav_links a {
+  color: var(--light-color);
+  font-family: var(--montserrat);
+  font-size: 1.8rem;
+  font-weight: 500;
+  position: relative;
+  transition: all .4s ease;
+}
+
+.nav_links a::before {
+  position: absolute;
+  content: "";
+  height: 1.5px;
+  width: 0%;
+  bottom: -3px;
+  background-color: var(--light-color);
+  transition: all .4s ease;
+}
+
+.nav_links a:hover::before {
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  font-family: var(--jost);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--light-color);
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+.social_links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.social_links a {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-color);
+  border-radius: 50%;
+  transition: all .4s ease-in-out;
+}
+
+.social_links a:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 2.2rem;
+}
+
+
+
+/* ================= Style Hero Section =============== */
+#hero {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 8rem;
+}
+
+.hero_image img {
+  height: 300px;
+  width: 300px;
+  background-color: var(--primary-dark);
+  border-radius: 50%;
+  border: 2px solid var(--light-color);
+}
+
+.hero_text_container h1 {
+  text-align: center;
+  color: var(--light-color);
+  font-family: var(--jost);
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+.hero_text_container h1 span {
+  animation: wave 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+    /* Initial position */
+  }
+
+  25% {
+    transform: rotate(-15deg);
+    /* Tilt to the left */
+  }
+
+  50% {
+    transform: rotate(0deg);
+    /* Center position */
+  }
+
+  75% {
+    transform: rotate(15deg);
+    /* Tilt to the right */
+  }
+
+  100% {
+    transform: rotate(0deg);
+    /* End position */
+  }
+}
+
+.hero_text_container h2 {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--light-color);
+  font-family: var(--montserrat);
+}
+
+.hero_text_container h2 span {
+  color: var(--primary-dark);
+}
+
+.scroll_icon {
+  margin-top: 2rem;
+  font-size: 3rem;
+  color: var(--light-color);
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: .5;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+
+
+/* ============= Style About Page =============== */
+.about_container {
+  padding: 2rem 8rem;
+}
+
+.heading p {
+  font-family: var(--jost);
+  font-size: 2rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 4.5rem;
+  color: var(--light-color);
+  font-family: var(--montserrat);
+  text-align: center;
+}
+
+.biography_container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.biography_container .img_container {
+  border: 2px solid var(--light-color);
+  border-radius: 2rem;
+  padding: 2rem 3rem;
+  box-shadow: var(--light-color) 10px 10px 1px 0px;
+}
+
+.biography_container .img_container img {
+  background-color: #29293b;
+  border-radius: 2rem;
+}
+
+.biography_container .text_container {
+  width: 600px;
+}
+
+.biography_container .text_container h1 {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-family: var(--montserrat);
+}
+
+.biography_container .text_container p {
+  font-size: 1.8rem;
+  color: var(--light-color);
+  font-family: var(--montserrat);
+  font-weight: 500;
+  margin-top: 2rem;
+
+}
+
+/* ================== Style Skills Section ============= */
+.skills_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  border-radius: 50%;
+  background: repeating-radial-gradient(#fff 2px, #1d1d2b 5px, #1d1d2b 100px);
+}
+
+.skill {
+  padding: 2rem;
+  font-size: 1.8rem;
+  background-color: var(--light-color);
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: var(--montserrat);
+  cursor: pointer;
+}
